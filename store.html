@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function initialize()
+{
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position)
+{
+    latitude=position.coords.latitude;
+    longitude=position.coords.longitude;
+    document.getElementById("lat").value=latitude;
+    document.getElementById("long").value=longitude;
+}
+initialize();
+</script>
+</head>
+
+<body>
+<form action="db.php" method="post">
+<input type="hidden" id="lat" name="lat" value="">
+<input type="hidden" id="long" name="long" value="">
+</form>
+</body>
+</html>
